@@ -22,6 +22,12 @@ header {
   margin-bottom: 20px;
 }
 
+
+header img {
+  vertical-align:middle;
+}
+
+
 main {
   background-color: #fff;
   padding: 20px;
