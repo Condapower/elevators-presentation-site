@@ -35,6 +35,51 @@
         <button id="waitlist-btn" aria-label="Join Waitlist">Join Waitlist</button>
         <p id="waitlist-confirmation" style="display: none; color: green; font-weight: bold;"></p>
     </section>
+
+
+    <section id="troubleshooting">
+  <h2>Troubleshooting Example</h2>
+
+  <article class="case">
+    <h3>Symptom: Car doesn’t run, handheld shows “Drive Fault”</h3>
+    <ul>
+      <li>Controller: Generic VVVF drive</li>
+      <li>Where it happens: On start-up after power cycle</li>
+    </ul>
+    <button class="show-solution">Show Solution</button>
+    <div class="solution" style="display:none;">
+      <ol>
+        <li>Verify mainline and controller fuses are good (no jumpers).</li>
+        <li>Check safety circuit is closed: stop switch, pit stop, car top, door locks.</li>
+        <li>Confirm encoder/cable seated and shield grounded.</li>
+        <li>On the drive: clear faults, check input phases, DC bus OK.</li>
+        <li>Run an auto-tune/learn per drive manual (no load if required).</li>
+        <li>Test a slow inspection run ↑/↓; then normal run.</li>
+      </ol>
+      <p><em>Tip:</em> If the drive faults immediately, check direction phasing and motor leads U/V/W swapped.</p>
+    </div>
+  </article>
+
+  <article class="case">
+    <h3>Symptom: Doors won’t close, “DLK” not made</h3>
+    <ul>
+      <li>Controller: Any swing/slider with door operator</li>
+      <li>Where it happens: Lobby floor</li>
+    </ul>
+    <button class="show-solution">Show Solution</button>
+    <div class="solution" style="display:none;">
+      <ol>
+        <li>Verify door zone sensor and vanes are aligned; clean target.</li>
+        <li>Inspect interlock circuit continuity from car top to controller.</li>
+        <li>Check operator limits: fully-close limit and nudging input.</li>
+        <li>Reduce closing speed/torque for test; check obstructions/rollers.</li>
+        <li>Simulate DLK with meter only (no jumpers for run); adjust interlock.</li>
+      </ol>
+      <p><em>Tip:</em> If DLK flickers, suspect broken cable at hinge/loop.</p>
+    </div>
+  </article>
+</section>
+
   </main>
 
   <footer>
