@@ -22,10 +22,11 @@ header {
   margin-bottom: 20px;
 }
 
-
 header img {
   vertical-align:middle;
+  border-radius: 8px;
 }
+
 
 
 main {
@@ -88,4 +89,5 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
 
