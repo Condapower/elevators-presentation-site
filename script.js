@@ -110,3 +110,10 @@ if (caseForm) {
     caseForm.reset();
   });
 }
+
+
+await fetch(caseForm.action, {
+  method: "POST",
+  body: new FormData(caseForm),
+  headers: { "Accept": "application/json" }
+});
