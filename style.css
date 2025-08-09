@@ -116,3 +116,47 @@ button:hover {
   margin-top: 8px;
   margin-bottom: 12px;
 }
+
+
+#submit-case form {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.04);
+}
+
+#submit-case .field {
+  margin-bottom: 12px;
+}
+
+#submit-case label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+#submit-case input[type="text"],
+#submit-case input[type="email"],
+#submit-case textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#submit-case button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#submit-case button[type="submit"]:hover {
+  background-color: #0056b3;
+}

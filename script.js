@@ -62,3 +62,51 @@ document.getElementById("caseSelect").addEventListener("change", function() {
     box.style.display = "none";
   }
 });
+
+
+
+// --- Case Submission Form (no backend) ---
+const caseForm = document.getElementById("caseForm");
+const caseMsg = document.getElementById("caseMsg");
+
+if (caseForm) {
+  caseForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Honeypot check (if filled, it's spam)
+    const honeypot = document.getElementById("company");
+    if (honeypot && honeypot.value.trim() !== "") {
+      return; // silently drop
+    }
+
+    // Grab values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const controller = document.getElementById("controller").value.trim();
+    const symptom = document.getElementById("symptom").value.trim();
+    const details = document.getElementById("details").value.trim();
+
+    // Simple validation
+    if (!controller || !symptom || !details) {
+      caseMsg.textContent = "Please fill out Controller, Symptom, and Details.";
+      caseMsg.style.color = "crimson";
+      caseMsg.style.display = "block";
+      return;
+    }
+
+    // Store locally (for demo) so you can review later in DevTools -> Application -> Local Storage
+    const existing = JSON.parse(localStorage.getItem("submittedCases") || "[]");
+    existing.push({
+      at: new Date().toISOString(),
+      name, email, controller, symptom, details
+    });
+    localStorage.setItem("submittedCases", JSON.stringify(existing));
+
+    // Success UI
+    caseMsg.textContent = "Thanks! Your case was submitted. I’ll review it.";
+    caseMsg.style.color = "green";
+    caseMsg.style.display = "block";
+
+    caseForm.reset();
+  });
+}
