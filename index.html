@@ -52,6 +52,46 @@
     <div id="caseDetails"></div>
   </div>
 </section>
+
+<section id="submit-case">
+  <h2>Submit a Troubleshooting Case</h2>
+  <p>Share a real issue you’re seeing. I’ll review and add the best ones to the guide.</p>
+
+  <form id="caseForm" novalidate>
+    <div class="field">
+      <label for="name">Your name (optional)</label>
+      <input type="text" id="name" name="name" placeholder="e.g., Juan P.">
+    </div>
+
+    <div class="field">
+      <label for="email">Email (optional)</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com">
+    </div>
+
+    <div class="field">
+      <label for="controller">Controller (required)</label>
+      <input type="text" id="controller" name="controller" placeholder="e.g., ESI VF2KX, Swift Futura" required>
+    </div>
+
+    <div class="field">
+      <label for="symptom">Symptom (required)</label>
+      <input type="text" id="symptom" name="symptom" placeholder="e.g., Won’t run, Drive Fault, DLK not made" required>
+    </div>
+
+    <div class="field">
+      <label for="details">Details (required)</label>
+      <textarea id="details" name="details" rows="5" placeholder="What floor, when it happens, what you’ve checked…" required></textarea>
+    </div>
+
+    <!-- Honeypot anti-spam (hidden) -->
+    <input type="text" id="company" name="company" style="display:none" tabindex="-1" autocomplete="off">
+
+    <button type="submit">Send Case</button>
+
+    <p id="caseMsg" style="display:none; margin-top:10px; font-weight:bold;"></p>
+  </form>
+</section>
+
  
 
   <article class="case">
